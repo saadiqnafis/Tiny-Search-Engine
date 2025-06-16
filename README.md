@@ -16,6 +16,5 @@ Tiny Search Engine (TSE) is a simple yet powerful search engine project comprise
 ## Development Environment
 
 Please note that Tiny Search Engine and its components were developed on a Linux-based system. This might impact compatibility and functionality when attempting to run or develop the project on other operating systems. 
----
 
 For more detailed information about each component of the Tiny Search Engine, please refer to the respective README.md files in their directories.
