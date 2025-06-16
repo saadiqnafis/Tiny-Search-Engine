@@ -1,0 +1,80 @@
+bash testing.sh
+=== Testing indexer with invalid arguments ===
+--- No arguments ---
+Usage: ./indexer pageDirectory indexFilename
+
+--- One argument ---
+Usage: ./indexer pageDirectory indexFilename
+
+--- Three arguments ---
+Usage: ./indexer pageDirectory indexFilename
+
+--- Invalid pageDirectory (non-existent path) ---
+Error: Invalid pageDirectory
+
+--- Invalid pageDirectory (not a crawler directory) ---
+Error: Invalid pageDirectory
+
+--- Invalid indexFile (non-existent path) ---
+Error: Could not write to indexFilename
+
+--- Invalid indexFile (read-only directory) ---
+
+--- Invalid indexFile (existing, read-only file) ---
+
+=== Testing indexer on valid inputs ===
+--- Running indexer on ../crawler/data/letters-2 with depth 0 ---
+
+--- Running indextest on the generated index file ---
+Index successfully loaded from ../crawler/data/letters_0.index and saved to ../crawler/data/letters-2-test.index
+
+Index validation successful for depth 0
+
+--- Running indexer on ../crawler/data/letters-2 with depth 1 ---
+
+--- Running indextest on the generated index file ---
+Index successfully loaded from ../crawler/data/letters_1.index and saved to ../crawler/data/letters-2-test.index
+
+Index validation successful for depth 1
+
+--- Running indexer on ../crawler/data/letters-2 with depth 2 ---
+
+--- Running indextest on the generated index file ---
+Index successfully loaded from ../crawler/data/letters_2.index and saved to ../crawler/data/letters-2-test.index
+
+Index validation successful for depth 2
+
+
+=== Running valgrind to check for memory leaks in indexer and indextest ===
+==2775621== Memcheck, a memory error detector
+==2775621== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==2775621== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==2775621== Command: ./indexer ../crawler/data/letters-2 ../crawler/data/letters-2.index
+==2775621== 
+==2775621== 
+==2775621== HEAP SUMMARY:
+==2775621==     in use at exit: 0 bytes in 0 blocks
+==2775621==   total heap usage: 1,238 allocs, 1,238 frees, 83,386 bytes allocated
+==2775621== 
+==2775621== All heap blocks were freed -- no leaks are possible
+==2775621== 
+==2775621== For lists of detected and suppressed errors, rerun with: -s
+==2775621== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+==2775642== Memcheck, a memory error detector
+==2775642== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==2775642== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==2775642== Command: ./indextest ../crawler/data/letters-2.index ../crawler/data/letters-2-test.index
+==2775642== 
+Index successfully loaded from ../crawler/data/letters-2.index and saved to ../crawler/data/letters-2-test.index
+==2775642== 
+==2775642== HEAP SUMMARY:
+==2775642==     in use at exit: 0 bytes in 0 blocks
+==2775642==   total heap usage: 90 allocs, 90 frees, 27,529 bytes allocated
+==2775642== 
+==2775642== All heap blocks were freed -- no leaks are possible
+==2775642== 
+==2775642== For lists of detected and suppressed errors, rerun with: -s
+==2775642== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+Testing complete.

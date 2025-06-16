@@ -1,0 +1,347 @@
+bash testing.sh
+=== Testing querier with invalid arguments ===
+Test 1: No arguments 
+Usage: ./querier pageDirectory indexFilename
+
+Test 2: One argument
+Usage: ./querier pageDirectory indexFilename
+
+Test 3: Three arguments
+Usage: ./querier pageDirectory indexFilename
+
+Test 4: non crawler directory
+Error: Directory ../libcs50 is not a crawler directory (missing .crawler file)
+
+Test 5: provided index isnt a file
+Error: can't read index file /thayerfs/home/f007hkw/cs50-dev/shared/tse/output/toscrape-3.index2
+
+Test 6: read from stdin
+Query? 
+Query: mom
+Matches 14 documents (ranked):
+score:    5 doc: 353: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-darkest-lie_747/index.html
+score:    4 doc:  11: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/this-one-summer_947/index.html
+score:    2 doc: 209: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-smitten-kitchen-cookbook_281/index.html
+score:    2 doc: 502: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/large-print-heart-of-the-pride_815/index.html
+score:    2 doc: 579: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/twenty-yawns_773/index.html
+score:    2 doc: 634: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-perfect-play-play-by-play-1_352/index.html
+score:    2 doc: 664: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/doing-it-over-most-likely-to-1_802/index.html
+score:    1 doc: 199: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-10-entrepreneur-live-your-startup-dream-without-quitting-your-day-job_836/index.html
+score:    1 doc: 220: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/cravings-recipes-for-what-you-want-to-eat_589/index.html
+score:    1 doc: 276: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/life-without-a-recipe_188/index.html
+score:    1 doc: 348: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/south-of-sunshine_544/index.html
+score:    1 doc: 635: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/keep-me-posted_594/index.html
+score:    1 doc: 657: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-purest-hook-second-circle-tattoos-3_271/index.html
+score:    1 doc: 703: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/art-ops-vol-1_664/index.html
+------------------------------------------------------------
+Query? 
+
+Test 7: read in without and
+Query? 
+Query: mom dad
+Matches 2 documents (ranked):
+score:    4 doc:  11: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/this-one-summer_947/index.html
+score:    2 doc: 502: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/large-print-heart-of-the-pride_815/index.html
+------------------------------------------------------------
+Query? 
+
+Test 8: read in with and
+Query? 
+Query: mom and dad
+Matches 2 documents (ranked):
+score:    4 doc:  11: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/this-one-summer_947/index.html
+score:    2 doc: 502: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/large-print-heart-of-the-pride_815/index.html
+------------------------------------------------------------
+Query? 
+
+Test 9: read in with or
+Query? 
+Query: mom or dad
+Matches 27 documents (ranked):
+score:   10 doc: 188: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/rich-dad-poor-dad_483/index.html
+score:    8 doc:  11: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/this-one-summer_947/index.html
+score:    5 doc: 353: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-darkest-lie_747/index.html
+score:    5 doc: 502: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/large-print-heart-of-the-pride_815/index.html
+score:    2 doc: 209: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-smitten-kitchen-cookbook_281/index.html
+score:    2 doc: 579: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/twenty-yawns_773/index.html
+score:    2 doc: 634: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-perfect-play-play-by-play-1_352/index.html
+score:    2 doc: 664: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/doing-it-over-most-likely-to-1_802/index.html
+score:    2 doc:  34: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/setting-the-world-on-fire-the-brief-astonishing-life-of-st-catherine-of-siena_603/index.html
+score:    2 doc:  35: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-faith-of-christopher-hitchens-the-restless-soul-of-the-worlds-most-notorious-atheist_495/index.html
+score:    2 doc:  36: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/benjamin-franklin-an-american-life_460/index.html
+score:    2 doc:  45: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/maude-1883-1993she-grew-up-with-the-country_964/index.html
+score:    2 doc:  65: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/louisa-the-extraordinary-life-of-mrs-adams_818/index.html
+score:    2 doc: 116: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/rework_212/index.html
+score:    2 doc: 186: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/business_35/index.html
+score:    2 doc: 187: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-lean-startup-how-todays-entrepreneurs-use-continuous-innovation-to-create-radically-successful-businesses_260/index.html
+score:    2 doc: 627: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/can-you-keep-a-secret_315/index.html
+score:    1 doc: 199: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-10-entrepreneur-live-your-startup-dream-without-quitting-your-day-job_836/index.html
+score:    1 doc: 220: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/cravings-recipes-for-what-you-want-to-eat_589/index.html
+score:    1 doc: 276: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/life-without-a-recipe_188/index.html
+score:    1 doc: 348: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/south-of-sunshine_544/index.html
+score:    1 doc: 635: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/keep-me-posted_594/index.html
+score:    1 doc: 657: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-purest-hook-second-circle-tattoos-3_271/index.html
+score:    1 doc: 703: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/art-ops-vol-1_664/index.html
+score:    1 doc: 355: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/until-friday-night-the-field-party-1_775/index.html
+score:    1 doc: 559: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-day-the-crayons-came-home-crayons_241/index.html
+score:    1 doc: 603: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/balloon-animals_665/index.html
+------------------------------------------------------------
+Query? 
+
+Test 10: memory check
+==1358859== Memcheck, a memory error detector
+==1358859== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==1358859== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==1358859== Command: ./querier /thayerfs/home/f007hkw/cs50-dev/shared/tse/output/toscrape-3 /thayerfs/home/f007hkw/cs50-dev/shared/tse/output/toscrape-3.index
+==1358859== 
+Query? 
+Query: mom dad
+Matches 2 documents (ranked):
+score:    4 doc:  11: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/this-one-summer_947/index.html
+score:    2 doc: 502: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/large-print-heart-of-the-pride_815/index.html
+------------------------------------------------------------
+Query? 
+==1358859== 
+==1358859== HEAP SUMMARY:
+==1358859==     in use at exit: 3,332,139 bytes in 215,997 blocks
+==1358859==   total heap usage: 463,451 allocs, 247,454 frees, 9,288,912 bytes allocated
+==1358859== 
+==1358859== 16 bytes in 1 blocks are indirectly lost in loss record 1 of 12
+==1358859==    at 0x4846828: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1358859==    by 0x10B5CF: mem_malloc (mem.c:69)
+==1358859==    by 0x10B063: hashtable_new (hashtable.c:47)
+==1358859==    by 0x10A63C: index_new (index.c:37)
+==1358859==    by 0x1094BA: main (querier.c:76)
+==1358859== 
+==1358859== 16 bytes in 1 blocks are indirectly lost in loss record 2 of 12
+==1358859==    at 0x4846828: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1358859==    by 0x10B5CF: mem_malloc (mem.c:69)
+==1358859==    by 0x10B063: hashtable_new (hashtable.c:47)
+==1358859==    by 0x10A63C: index_new (index.c:37)
+==1358859==    by 0x10A88B: index_load (index.c:102)
+==1358859==    by 0x1094CA: main (querier.c:77)
+==1358859== 
+==1358859== 4,000 bytes in 1 blocks are indirectly lost in loss record 3 of 12
+==1358859==    at 0x4846828: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1358859==    by 0x10B5CF: mem_malloc (mem.c:69)
+==1358859==    by 0x10B092: hashtable_new (hashtable.c:54)
+==1358859==    by 0x10A63C: index_new (index.c:37)
+==1358859==    by 0x1094BA: main (querier.c:76)
+==1358859== 
+==1358859== 4,000 bytes in 500 blocks are indirectly lost in loss record 4 of 12
+==1358859==    at 0x4846828: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1358859==    by 0x10B5CF: mem_malloc (mem.c:69)
+==1358859==    by 0x10B777: set_new (set.c:44)
+==1358859==    by 0x10B0CE: hashtable_new (hashtable.c:62)
+==1358859==    by 0x10A63C: index_new (index.c:37)
+==1358859==    by 0x1094BA: main (querier.c:76)
+==1358859== 
+==1358859== 8,024 (8 direct, 8,016 indirect) bytes in 1 blocks are definitely lost in loss record 5 of 12
+==1358859==    at 0x4846828: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1358859==    by 0x10B5CF: mem_malloc (mem.c:69)
+==1358859==    by 0x10A620: index_new (index.c:33)
+==1358859==    by 0x1094BA: main (querier.c:76)
+==1358859== 
+==1358859== 127,464 bytes in 15,933 blocks are indirectly lost in loss record 6 of 12
+==1358859==    at 0x4846828: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1358859==    by 0x10B5CF: mem_malloc (mem.c:69)
+==1358859==    by 0x10AA50: counters_new (counters.c:45)
+==1358859==    by 0x10A8B5: index_load (index.c:110)
+==1358859==    by 0x1094CA: main (querier.c:77)
+==1358859== 
+==1358859== 131,163 bytes in 15,933 blocks are indirectly lost in loss record 7 of 12
+==1358859==    at 0x4846828: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1358859==    by 0x10B5CF: mem_malloc (mem.c:69)
+==1358859==    by 0x10B88C: setnode_new (set.c:101)
+==1358859==    by 0x10B7FD: set_insert (set.c:68)
+==1358859==    by 0x10B1D9: hashtable_insert (hashtable.c:89)
+==1358859==    by 0x10A90E: index_load (index.c:117)
+==1358859==    by 0x1094CA: main (querier.c:77)
+==1358859== 
+==1358859== 254,928 bytes in 1 blocks are indirectly lost in loss record 8 of 12
+==1358859==    at 0x4846828: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1358859==    by 0x10B5CF: mem_malloc (mem.c:69)
+==1358859==    by 0x10B092: hashtable_new (hashtable.c:54)
+==1358859==    by 0x10A63C: index_new (index.c:37)
+==1358859==    by 0x10A88B: index_load (index.c:102)
+==1358859==    by 0x1094CA: main (querier.c:77)
+==1358859== 
+==1358859== 254,928 bytes in 31,866 blocks are indirectly lost in loss record 9 of 12
+==1358859==    at 0x4846828: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1358859==    by 0x10B5CF: mem_malloc (mem.c:69)
+==1358859==    by 0x10B777: set_new (set.c:44)
+==1358859==    by 0x10B0CE: hashtable_new (hashtable.c:62)
+==1358859==    by 0x10A63C: index_new (index.c:37)
+==1358859==    by 0x10A88B: index_load (index.c:102)
+==1358859==    by 0x1094CA: main (querier.c:77)
+==1358859== 
+==1358859== 382,392 bytes in 15,933 blocks are indirectly lost in loss record 10 of 12
+==1358859==    at 0x4846828: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1358859==    by 0x10B5CF: mem_malloc (mem.c:69)
+==1358859==    by 0x10B862: setnode_new (set.c:95)
+==1358859==    by 0x10B7FD: set_insert (set.c:68)
+==1358859==    by 0x10B1D9: hashtable_insert (hashtable.c:89)
+==1358859==    by 0x10A90E: index_load (index.c:117)
+==1358859==    by 0x1094CA: main (querier.c:77)
+==1358859== 
+==1358859== 2,173,216 bytes in 135,826 blocks are indirectly lost in loss record 11 of 12
+==1358859==    at 0x4846828: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1358859==    by 0x10B5CF: mem_malloc (mem.c:69)
+==1358859==    by 0x10AB48: countersnode_new (counters.c:97)
+==1358859==    by 0x10AC67: counters_set (counters.c:148)
+==1358859==    by 0x10A8CF: index_load (index.c:114)
+==1358859==    by 0x1094CA: main (querier.c:77)
+==1358859== 
+==1358859== 3,324,115 (8 direct, 3,324,107 indirect) bytes in 1 blocks are definitely lost in loss record 12 of 12
+==1358859==    at 0x4846828: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1358859==    by 0x10B5CF: mem_malloc (mem.c:69)
+==1358859==    by 0x10A620: index_new (index.c:33)
+==1358859==    by 0x10A88B: index_load (index.c:102)
+==1358859==    by 0x1094CA: main (querier.c:77)
+==1358859== 
+==1358859== LEAK SUMMARY:
+==1358859==    definitely lost: 16 bytes in 2 blocks
+==1358859==    indirectly lost: 3,332,123 bytes in 215,995 blocks
+==1358859==      possibly lost: 0 bytes in 0 blocks
+==1358859==    still reachable: 0 bytes in 0 blocks
+==1358859==         suppressed: 0 bytes in 0 blocks
+==1358859== 
+==1358859== For lists of detected and suppressed errors, rerun with: -s
+==1358859== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+
+Test 11: improper characters stdin
+Error: bad character '&' in query
+Query? 
+------------------------------------------------------------
+Query? 
+
+Test 12: no stdin
+Query? 
+Query: 
+
+Test 13: start with and
+Error: 'and' cannot be first
+Query? 
+------------------------------------------------------------
+Query? 
+
+Test 14: start with or
+Error: 'or' cannot be first
+Query? 
+------------------------------------------------------------
+Query? 
+
+Test 15: end with or
+Error: 'or' cannot be last
+Query? 
+------------------------------------------------------------
+Query? 
+
+Test 16: end with and
+Error: 'and' cannot be last
+Query? 
+------------------------------------------------------------
+Query? 
+
+Test 17: put and and or next to eachother
+Error: 'or' and 'and' cannot be adjacent
+Query? 
+------------------------------------------------------------
+Query? 
+
+Test 18: read in multiple lines
+Query? 
+Query: mom or dad
+Matches 27 documents (ranked):
+score:   10 doc: 188: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/rich-dad-poor-dad_483/index.html
+score:    8 doc:  11: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/this-one-summer_947/index.html
+score:    5 doc: 353: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-darkest-lie_747/index.html
+score:    5 doc: 502: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/large-print-heart-of-the-pride_815/index.html
+score:    2 doc: 209: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-smitten-kitchen-cookbook_281/index.html
+score:    2 doc: 579: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/twenty-yawns_773/index.html
+score:    2 doc: 634: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-perfect-play-play-by-play-1_352/index.html
+score:    2 doc: 664: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/doing-it-over-most-likely-to-1_802/index.html
+score:    2 doc:  34: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/setting-the-world-on-fire-the-brief-astonishing-life-of-st-catherine-of-siena_603/index.html
+score:    2 doc:  35: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-faith-of-christopher-hitchens-the-restless-soul-of-the-worlds-most-notorious-atheist_495/index.html
+score:    2 doc:  36: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/benjamin-franklin-an-american-life_460/index.html
+score:    2 doc:  45: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/maude-1883-1993she-grew-up-with-the-country_964/index.html
+score:    2 doc:  65: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/louisa-the-extraordinary-life-of-mrs-adams_818/index.html
+score:    2 doc: 116: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/rework_212/index.html
+score:    2 doc: 186: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/business_35/index.html
+score:    2 doc: 187: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-lean-startup-how-todays-entrepreneurs-use-continuous-innovation-to-create-radically-successful-businesses_260/index.html
+score:    2 doc: 627: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/can-you-keep-a-secret_315/index.html
+score:    1 doc: 199: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-10-entrepreneur-live-your-startup-dream-without-quitting-your-day-job_836/index.html
+score:    1 doc: 220: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/cravings-recipes-for-what-you-want-to-eat_589/index.html
+score:    1 doc: 276: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/life-without-a-recipe_188/index.html
+score:    1 doc: 348: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/south-of-sunshine_544/index.html
+score:    1 doc: 635: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/keep-me-posted_594/index.html
+score:    1 doc: 657: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-purest-hook-second-circle-tattoos-3_271/index.html
+score:    1 doc: 703: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/art-ops-vol-1_664/index.html
+score:    1 doc: 355: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/until-friday-night-the-field-party-1_775/index.html
+score:    1 doc: 559: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-day-the-crayons-came-home-crayons_241/index.html
+score:    1 doc: 603: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/balloon-animals_665/index.html
+------------------------------------------------------------
+Query? Query: mom
+Matches 14 documents (ranked):
+score:    5 doc: 353: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-darkest-lie_747/index.html
+score:    4 doc:  11: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/this-one-summer_947/index.html
+score:    2 doc: 209: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-smitten-kitchen-cookbook_281/index.html
+score:    2 doc: 502: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/large-print-heart-of-the-pride_815/index.html
+score:    2 doc: 579: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/twenty-yawns_773/index.html
+score:    2 doc: 634: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-perfect-play-play-by-play-1_352/index.html
+score:    2 doc: 664: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/doing-it-over-most-likely-to-1_802/index.html
+score:    1 doc: 199: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-10-entrepreneur-live-your-startup-dream-without-quitting-your-day-job_836/index.html
+score:    1 doc: 220: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/cravings-recipes-for-what-you-want-to-eat_589/index.html
+score:    1 doc: 276: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/life-without-a-recipe_188/index.html
+score:    1 doc: 348: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/south-of-sunshine_544/index.html
+score:    1 doc: 635: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/keep-me-posted_594/index.html
+score:    1 doc: 657: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-purest-hook-second-circle-tattoos-3_271/index.html
+score:    1 doc: 703: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/art-ops-vol-1_664/index.html
+------------------------------------------------------------
+Query? Query: dad
+Matches 15 documents (ranked):
+score:   10 doc: 188: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/rich-dad-poor-dad_483/index.html
+score:    4 doc:  11: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/this-one-summer_947/index.html
+score:    3 doc: 502: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/large-print-heart-of-the-pride_815/index.html
+score:    2 doc:  34: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/setting-the-world-on-fire-the-brief-astonishing-life-of-st-catherine-of-siena_603/index.html
+score:    2 doc:  35: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-faith-of-christopher-hitchens-the-restless-soul-of-the-worlds-most-notorious-atheist_495/index.html
+score:    2 doc:  36: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/benjamin-franklin-an-american-life_460/index.html
+score:    2 doc:  45: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/maude-1883-1993she-grew-up-with-the-country_964/index.html
+score:    2 doc:  65: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/louisa-the-extraordinary-life-of-mrs-adams_818/index.html
+score:    2 doc: 116: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/rework_212/index.html
+score:    2 doc: 186: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/business_35/index.html
+score:    2 doc: 187: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-lean-startup-how-todays-entrepreneurs-use-continuous-innovation-to-create-radically-successful-businesses_260/index.html
+score:    2 doc: 627: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/can-you-keep-a-secret_315/index.html
+score:    1 doc: 355: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/until-friday-night-the-field-party-1_775/index.html
+score:    1 doc: 559: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-day-the-crayons-came-home-crayons_241/index.html
+score:    1 doc: 603: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/balloon-animals_665/index.html
+------------------------------------------------------------
+Query? Query: mom and dad
+Matches 2 documents (ranked):
+score:    4 doc:  11: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/this-one-summer_947/index.html
+score:    2 doc: 502: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/large-print-heart-of-the-pride_815/index.html
+------------------------------------------------------------
+Query? Query: mom and dd
+No documents match.
+------------------------------------------------------------
+Query? Query: mom dad
+Matches 2 documents (ranked):
+score:    4 doc:  11: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/this-one-summer_947/index.html
+score:    2 doc: 502: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/large-print-heart-of-the-pride_815/index.html
+------------------------------------------------------------
+Query? 
+
+Test 19: line with one invalid entry
+Query? 
+Query: mom dad dd
+No documents match.
+------------------------------------------------------------
+Query? 
+
+Test 20: word not in index
+Query? 
+Query: jajjasdsa
+No documents match.
+------------------------------------------------------------
+Query? 
+

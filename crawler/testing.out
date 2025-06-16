@@ -1,0 +1,114 @@
+bash testing.sh
+Running tests with erroneous arguments...
+Test Missing depth argument
+Error: Invalid number of arguments.
+Test Invalid Directory
+Error: Unable to create .crawler file in directory not_a_directory
+Error: Unable to initialize page directory.
+Test Invalid URL
+Error: Seed URL is not internal.
+Test Invalid Depth
+Error: Invalid maxDepth value.
+Test out of range depth
+Error: Invalid maxDepth value.
+Error testing complete.
+Testing CS50 websites with various depths...
+Testing complete.
+Verifying output in data directories...
+data/letters-0:
+total 24
+-rw-r--r-- 1 f007hkw thayerusers 163 Oct 21 22:37 1
+
+data/letters-1:
+total 48
+-rw-r--r-- 1 f007hkw thayerusers 163 Oct 21 22:37 1
+-rw-r--r-- 1 f007hkw thayerusers 207 Oct 21 22:37 2
+
+data/letters-2:
+total 72
+-rw-r--r-- 1 f007hkw thayerusers 163 Oct 21 22:37 1
+-rw-r--r-- 1 f007hkw thayerusers 207 Oct 21 22:37 2
+-rw-r--r-- 1 f007hkw thayerusers 271 Oct 21 22:37 3
+
+data/toscrape-0:
+total 24
+-rw-r--r-- 1 f007hkw thayerusers 51353 Oct 21 22:37 1
+
+data/toscrape-1:
+total 1752
+-rw-r--r-- 1 f007hkw thayerusers 51353 Oct 21 22:37 1
+-rw-r--r-- 1 f007hkw thayerusers 18371 Oct 21 22:38 10
+-rw-r--r-- 1 f007hkw thayerusers 18535 Oct 21 22:38 11
+-rw-r--r-- 1 f007hkw thayerusers 19332 Oct 21 22:38 12
+-rw-r--r-- 1 f007hkw thayerusers 22787 Oct 21 22:38 13
+-rw-r--r-- 1 f007hkw thayerusers 21039 Oct 21 22:38 14
+-rw-r--r-- 1 f007hkw thayerusers 23534 Oct 21 22:38 15
+-rw-r--r-- 1 f007hkw thayerusers 19930 Oct 21 22:38 16
+-rw-r--r-- 1 f007hkw thayerusers 16557 Oct 21 22:38 17
+-rw-r--r-- 1 f007hkw thayerusers 17136 Oct 21 22:38 18
+-rw-r--r-- 1 f007hkw thayerusers 14934 Oct 21 22:38 19
+-rw-r--r-- 1 f007hkw thayerusers 50947 Oct 21 22:37 2
+-rw-r--r-- 1 f007hkw thayerusers 12515 Oct 21 22:38 20
+-rw-r--r-- 1 f007hkw thayerusers 11010 Oct 21 22:38 21
+-rw-r--r-- 1 f007hkw thayerusers  9374 Oct 21 22:38 22
+-rw-r--r-- 1 f007hkw thayerusers 21586 Oct 21 22:38 23
+-rw-r--r-- 1 f007hkw thayerusers 21343 Oct 21 22:38 24
+-rw-r--r-- 1 f007hkw thayerusers 21365 Oct 21 22:38 25
+-rw-r--r-- 1 f007hkw thayerusers 24813 Oct 21 22:38 26
+-rw-r--r-- 1 f007hkw thayerusers 26334 Oct 21 22:38 27
+-rw-r--r-- 1 f007hkw thayerusers 21550 Oct 21 22:38 28
+-rw-r--r-- 1 f007hkw thayerusers 21365 Oct 21 22:38 29
+-rw-r--r-- 1 f007hkw thayerusers 19458 Oct 21 22:37 3
+-rw-r--r-- 1 f007hkw thayerusers 21458 Oct 21 22:38 30
+-rw-r--r-- 1 f007hkw thayerusers 24759 Oct 21 22:38 31
+-rw-r--r-- 1 f007hkw thayerusers 23022 Oct 21 22:38 32
+-rw-r--r-- 1 f007hkw thayerusers 28094 Oct 21 22:38 33
+-rw-r--r-- 1 f007hkw thayerusers 21455 Oct 21 22:38 34
+-rw-r--r-- 1 f007hkw thayerusers 29749 Oct 21 22:38 35
+-rw-r--r-- 1 f007hkw thayerusers 24445 Oct 21 22:38 36
+-rw-r--r-- 1 f007hkw thayerusers 36163 Oct 21 22:38 37
+-rw-r--r-- 1 f007hkw thayerusers 28085 Oct 21 22:39 38
+-rw-r--r-- 1 f007hkw thayerusers 39102 Oct 21 22:39 39
+-rw-r--r-- 1 f007hkw thayerusers 19058 Oct 21 22:37 4
+-rw-r--r-- 1 f007hkw thayerusers 28872 Oct 21 22:39 40
+-rw-r--r-- 1 f007hkw thayerusers 54226 Oct 21 22:39 41
+-rw-r--r-- 1 f007hkw thayerusers 49397 Oct 21 22:39 42
+-rw-r--r-- 1 f007hkw thayerusers 44604 Oct 21 22:39 43
+-rw-r--r-- 1 f007hkw thayerusers 35635 Oct 21 22:39 44
+-rw-r--r-- 1 f007hkw thayerusers 21478 Oct 21 22:39 45
+-rw-r--r-- 1 f007hkw thayerusers 21589 Oct 21 22:39 46
+-rw-r--r-- 1 f007hkw thayerusers 33135 Oct 21 22:39 47
+-rw-r--r-- 1 f007hkw thayerusers 31066 Oct 21 22:39 48
+-rw-r--r-- 1 f007hkw thayerusers 31860 Oct 21 22:39 49
+-rw-r--r-- 1 f007hkw thayerusers 20080 Oct 21 22:37 5
+-rw-r--r-- 1 f007hkw thayerusers 21483 Oct 21 22:39 50
+-rw-r--r-- 1 f007hkw thayerusers 48301 Oct 21 22:39 51
+-rw-r--r-- 1 f007hkw thayerusers 42642 Oct 21 22:39 52
+-rw-r--r-- 1 f007hkw thayerusers 50266 Oct 21 22:39 53
+-rw-r--r-- 1 f007hkw thayerusers 28829 Oct 21 22:39 54
+-rw-r--r-- 1 f007hkw thayerusers 51343 Oct 21 22:39 55
+-rw-r--r-- 1 f007hkw thayerusers 51032 Oct 21 22:39 56
+-rw-r--r-- 1 f007hkw thayerusers 27662 Oct 21 22:39 57
+-rw-r--r-- 1 f007hkw thayerusers 44550 Oct 21 22:39 58
+-rw-r--r-- 1 f007hkw thayerusers 51569 Oct 21 22:39 59
+-rw-r--r-- 1 f007hkw thayerusers 19605 Oct 21 22:37 6
+-rw-r--r-- 1 f007hkw thayerusers 40286 Oct 21 22:39 60
+-rw-r--r-- 1 f007hkw thayerusers 52823 Oct 21 22:39 61
+-rw-r--r-- 1 f007hkw thayerusers 31029 Oct 21 22:39 62
+-rw-r--r-- 1 f007hkw thayerusers 49961 Oct 21 22:39 63
+-rw-r--r-- 1 f007hkw thayerusers 49772 Oct 21 22:39 64
+-rw-r--r-- 1 f007hkw thayerusers 45409 Oct 21 22:39 65
+-rw-r--r-- 1 f007hkw thayerusers 50491 Oct 21 22:39 66
+-rw-r--r-- 1 f007hkw thayerusers 37129 Oct 21 22:40 67
+-rw-r--r-- 1 f007hkw thayerusers 47969 Oct 21 22:40 68
+-rw-r--r-- 1 f007hkw thayerusers 51556 Oct 21 22:40 69
+-rw-r--r-- 1 f007hkw thayerusers 18949 Oct 21 22:37 7
+-rw-r--r-- 1 f007hkw thayerusers 50214 Oct 21 22:40 70
+-rw-r--r-- 1 f007hkw thayerusers 50482 Oct 21 22:40 71
+-rw-r--r-- 1 f007hkw thayerusers 37102 Oct 21 22:40 72
+-rw-r--r-- 1 f007hkw thayerusers 50693 Oct 21 22:40 73
+-rw-r--r-- 1 f007hkw thayerusers 18459 Oct 21 22:37 8
+-rw-r--r-- 1 f007hkw thayerusers 18885 Oct 21 22:38 9
+Verification complete.
+make: *** [Makefile:25: test] Hangup
+make: *** [Makefile:25: test] Hangup
